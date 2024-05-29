@@ -1,0 +1,35 @@
+:root {
+  --black:          #000000;
+  --black-medium:   #464646;
+  --black-02:       #5C5C5C;
+  --black-light:    #131313;
+  --grey:           #3E3E3E;
+  --grey-medium:    #787878;
+  --grey-light:     #787878;
+  --white:          #FFFFFF;
+  --white-medium:   #F4F4F4;
+  --white-light:    #F3F3F3;
+  --red:            #EE0000;
+  --generic-bg:  var(--white);
+
+}
+
+$black: var(--black);
+$black-medium: var(--black-medium);
+$black02: var(--black-02);
+$black-light: var(--black-light);
+$grey: var(--grey);
+$gray-medium: var(--grey-medium);
+$grey-light: var(--grey-light);
+$white: var(--white);
+$white-medium: var(--white-medium);
+$white-light: var(--white-light);
+$red: var(--red);
+
+.content {
+    display: none;
+}
+
+.text-red {
+    color: var(--red);
+}

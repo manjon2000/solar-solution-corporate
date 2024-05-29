@@ -1,0 +1,90 @@
+@use "../settings/breakpoints" as breakpoints;
+@use "../settings/keyframes" as keyframes;
+@use "../utils/mixins" as mixins;
+
+.header {
+  width: 100%;
+  height: auto;
+  padding: 2rem 1rem;
+  background-color: $black;
+  position: fixed;
+  top: 0;
+  z-index: 4;
+
+  &__wrapper {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+
+  &__navigation {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 5;
+    background-color: $black;
+    position: absolute;
+    left: 0;
+    top: 133px;
+    padding: 2rem 1rem;
+
+    animation-name: collapseAnimation;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+
+    &--show {
+      animation-name: expandAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+
+    @include mixins.MediaQuery(breakpoints.$breakpoint-md) {
+      width: fit-content;
+      position: unset;
+      top: unset;
+      left: unset;
+      flex-direction: row;
+      padding: 0;
+      gap: 1rem;
+
+      animation-name: unset;
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 1rem;
+      color: $white;
+
+      transition: color ease-in-out 0.25s;
+
+      &:hover {
+        color: rgb(255, 255, 255, 0.2);
+      }
+
+      @include mixins.MediaQuery(breakpoints.$breakpoint-md) {
+        font-size: 0.75rem;
+      }
+
+      @include mixins.MediaQuery(breakpoints.$breakpoint-lg) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__icon-menu {
+    display: block;
+    color: $white;
+
+    @include mixins.MediaQuery(breakpoints.$breakpoint-md) {
+      display: none;
+      position: absolute;
+      top: -200000000px;
+      left: -10000000px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.btn {
+    --btn-bg: transparent;
+    --btn-color: #{$red};
+    width: fit-content;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: 10px 33px;
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    border-radius: 50px;
+
+    &--white {
+        --btn-bg: #{$white};
+        --btn-color: #000;
+    }
+
+    &--dark {
+        --btn-bg: #000;
+        --btn-color: #{$white};
+    }
+}
